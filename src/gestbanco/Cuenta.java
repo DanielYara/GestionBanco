@@ -19,8 +19,12 @@ public class Cuenta {
         this.credito = credito;
         this.dueño = dueño;
     }
+    
+    public void añadDueño(Cliente owner){
+        this.dueño = owner;
+    }
 
-    public Cliente getDueño() {
+    public Cliente getDueño(){
         return dueño;
     }
 

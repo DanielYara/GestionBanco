@@ -1,0 +1,4 @@
+Gerente: Juan Perez, Cliente: Fernando Castro, Cuenta: 12345, Credito: 550000.0,
+
+Gerente: Juan Perez, Cliente: Manuel Yepes, Cuenta: 12346, Credito: 870000.0,
+

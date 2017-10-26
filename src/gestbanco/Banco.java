@@ -34,8 +34,6 @@ public class Banco {
         boolean r = false;
         for(int i = 0; i < this.gerentes.size(); i++){
             if(this.gerentes.get(i).getName().equals(nomGerente)){
-                aux = new Gerente(nomGerente);
-                cliente.setGerente(aux);
                 this.clientes.add(cliente);
                 r = this.gerentes.get(i).añadClientes(cliente);
                 break;
@@ -51,7 +49,6 @@ public class Banco {
         for(int i = 0; i < this.clientes.size(); i++){
             if(this.clientes.get(i).getName().equals(nomClient)){
                 aux = new Cliente(nomClient);
-                ct.setDueño(aux);
                 this.clientes.get(i).añadCuentas(ct);
                 r = this.cuentas.add(ct);
                 break;

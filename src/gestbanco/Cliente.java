@@ -17,6 +17,7 @@ public class Cliente extends Persona{
 
     public Cliente(String name) {
         super(name);
+        this.cuentas = new ArrayList<>();
     }
     
     public boolean añadCuentas(Cuenta cuenta){
