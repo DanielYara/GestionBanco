@@ -5,6 +5,8 @@
  */
 package gestbanco;
 import gestionmemoria.CreacionArchivo;
+import gestionmemoria.CargaDatos;
+import vista.Vista;
 import java.io.*;
 import java.util.ArrayList;
 
@@ -41,24 +43,11 @@ public class GestBanco {
         bank.añadCuenta(id1, cred1, client1);
         bank.añadCuenta(id2, cred2, client2);
         
-        ArrayList<String> z = new ArrayList<>();
-        String r = null;
-        for(Gerente ger : bank.listGerentes()){
-            for(int i = 0; i < ger.getClientes().size(); i++){
-                for(int k = 0; k < ger.getClientes().get(i).getCuentas().size(); k++)
-                    r = "Banco: " + bank.getName() + ", Gerente: " + ger.getName() + ", Cliente: " + ger.getClientes().get(i).getName() + ", Cuenta: "
-                        + ger.getClientes().get(i).getCuentas().get(k).getId() + ", Credito: " + ger.getClientes().get(i).getCuentas().get(k).getCredito() + ",";
-                    z.add(r);
-            }
-        }
+        File fl = f.crearArchivo();
+        f.rellArchivo(bank, fl);
         
-        
-        File fl = null;
-        fl = f.crearArchivo();
-        PrintStream ps = new PrintStream(fl);
-        for(String lt : z){
-            ps.println(lt);
-        }
+        String filename = Vista.readFileName();
+        Banco n = CargaDatos.leerArchivo(filename);
+        Vista.mostrarDatos(n);
     }
-    
 }

@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 package gestionmemoria;
+
+import gestbanco.Banco;
+import gestbanco.Gerente;
 import java.io.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -22,5 +26,23 @@ public class CreacionArchivo {
             }
         }
         return f;
+    }
+    
+    public void rellArchivo(Banco bank, File fl) throws FileNotFoundException{
+        ArrayList<String> z = new ArrayList<>();
+        String r = null;
+        for(Gerente ger : bank.listGerentes()){
+            for(int i = 0; i < ger.getClientes().size(); i++){
+                for(int k = 0; k < ger.getClientes().get(i).getCuentas().size(); k++)
+                    r = bank.getName() + ", " + ger.getName() + ", " + ger.getClientes().get(i).getName() + ", "
+                        + ger.getClientes().get(i).getCuentas().get(k).getId() + ", " + ger.getClientes().get(i).getCuentas().get(k).getCredito() + ",";
+                    z.add(r);
+            }
+        }
+        
+        PrintStream ps = new PrintStream(fl);
+        for(String lt : z){
+            ps.println(lt);
+        }
     }
 }
