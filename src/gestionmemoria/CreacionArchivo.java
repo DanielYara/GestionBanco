@@ -12,7 +12,7 @@ import java.io.*;
  */
 public class CreacionArchivo {
     public File crearArchivo(){
-        File f = new File("Banco.txt");
+        File f = new File("Banco.csv");
         if(!(f.exists())){
             try{
                 f.createNewFile();
