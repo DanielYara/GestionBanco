@@ -46,8 +46,8 @@ public class GestBanco {
         for(Gerente ger : bank.listGerentes()){
             for(int i = 0; i < ger.getClientes().size(); i++){
                 for(int k = 0; k < ger.getClientes().get(i).getCuentas().size(); k++)
-                    r = "Gerente: " + ger.getName() + ", Cliente: " + ger.getClientes().get(i).getName() + ", Cuenta: "
-                        + ger.getClientes().get(i).getCuentas().get(k).getId() + ", Credito: " + ger.getClientes().get(i).getCuentas().get(k).getCredito() + ",\n";
+                    r = "Banco: " + bank.getName() + ", Gerente: " + ger.getName() + ", Cliente: " + ger.getClientes().get(i).getName() + ", Cuenta: "
+                        + ger.getClientes().get(i).getCuentas().get(k).getId() + ", Credito: " + ger.getClientes().get(i).getCuentas().get(k).getCredito() + ",";
                     z.add(r);
             }
         }
