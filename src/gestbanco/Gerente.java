@@ -15,7 +15,31 @@ public class Gerente extends Persona{
 
     public Gerente(String name) {
         super(name);
-        clientes = new ArrayList<>();
+        this.clientes = new ArrayList<>();
     }
+    
+    public boolean añadClientes(Cliente cliente){
+        Gerente aux = new Gerente(super.name);
+        cliente.setGerente(aux);
+        return this.clientes.add(cliente);
+    }
+
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(ArrayList<Cliente> clientes) {
+        this.clientes = clientes;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    
     
 }

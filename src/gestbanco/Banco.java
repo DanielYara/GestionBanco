@@ -20,6 +20,10 @@ public class Banco {
         this.personas = new ArrayList<>();
         this.cuentas = new ArrayList<>();
     }
+    
+    public boolean añadPersona(Persona persona){
+        return this.personas.add(persona);
+    }
 
     public String getName() {
         return name;

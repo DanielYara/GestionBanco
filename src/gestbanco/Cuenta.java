@@ -12,12 +12,22 @@ package gestbanco;
 public class Cuenta {
     private int id;
     private double credito = 0.0;
+    private Cliente dueño = null;
 
     public Cuenta(int id, double credito) {
         this.id = id;
         this.credito = credito;
+        this.dueño = dueño;
     }
 
+    public Cliente getDueño() {
+        return dueño;
+    }
+
+    public void setDueño(Cliente dueño) {
+        this.dueño = dueño;
+    }
+    
     public int getId() {
         return id;
     }
