@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package gestbanco;
+import gestionmemoria.CreacionArchivo;
+import java.io.*;
 
 /*
 Realizar un programa que permita gestionar la información de un banco de acuerdo
@@ -24,16 +26,19 @@ public class GestBanco {
     public static void main(String[] args) {
         // TODO code application logic here
         Banco bank = new Banco("Unal");
-        Gerente manager1 = new Gerente("Juan Perez");
-        Cliente cliente1 = new Cliente("John Yepes");
-        Cliente cliente2 = new Cliente("Emilia Espinoza");
-        Cuenta c1 = new Cuenta(124, 300.0);
-        Cuenta c2 = new Cuenta(125, 350.0);
-        cliente1.añadCuentas(c1);
-        cliente2.añadCuentas(c2);
-        manager1.añadClientes(cliente1);
-        manager1.añadClientes(cliente2);
+        CreacionArchivo f = new CreacionArchivo();
+        String ger1 = "Juan Perez";
+        bank.añadGerente(ger1);
+        String client1 = "Fernando Castro";
+        String client2 = "Manuel Yepes";
+        bank.añadCliente(client1, ger1);
+        bank.añadCliente(client2, ger1);
+        int id = 12345;
+        double cred = 550000;
+        bank.añadCuenta(id, cred, client1);
         
+        File fl = null;
+        fl = f.crearArchivo();
         
     }
     
